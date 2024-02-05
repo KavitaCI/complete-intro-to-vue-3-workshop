@@ -4,7 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Simpsons overview</title>
   </head>
-  <body></body>
+  <body>
+    <h1>{{ title }}</h1>
+    <div id="app">
+      <p>Even: {{ message.toUpperCase() }}</p>
+      <p v-else>Odd: {{ title }}</p>
+      <ul v-for="item in listOfNumbers">
+        <li>
+          {{ item.id }}
+          <ul>
+            <li v-for="number in item.list">{{ number }}</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const { createApp } = Vue;
+
+      const app = createApp({
+        data() {},
+      });
+
+      app.mount("#app");
+    </script>
+  </body>
 </html>
